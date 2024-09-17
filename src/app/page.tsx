@@ -195,13 +195,13 @@ function ProjectsSection() {
     {
       title: "Code Nexus",
       description: "A dynamic code editor offering real-time syntax highlighting, collaborative editing, and secure user authentication, enabling seamless programming collaboration across various languages.",
-      technologies: ["React", "Redux", "Monaco Editor", "JWT", "bcrypt", "Socket.IO", "MongoDB"],
+      technologies: ["React", "Redux", "Monaco Editor", "JWT", "bcrypt", "Socket.IO", "MongoDB", "Mongoose", "Axios", "JavaScript", "RESTful API", "Rate Limiting", "Postman"],
       github: "https://github.com/KumudBhatt/Code-Nexus"
     },
     {
       title: "Alumni Connect",
       description: "A comprehensive alumni networking platform backend facilitating seamless connections among alumni.",
-      technologies: ["Node.js", "Express", "Prisma", "PostgreSQL", "Socket.IO", "Zod"],
+      technologies: ["Node.js", "Express", "Prisma", "PostgreSQL", "Socket.IO", "JWT", "bcrypt", "Zod", "JavaScript", "RESTful API", "Prisma ORM", "Postman"],
       github: "https://github.com/KumudBhatt/Alumini-Connect"
     }
   ]
