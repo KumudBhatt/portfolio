@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { X, Menu } from 'lucide-react'
 import { FaGithub, FaLinkedin, FaJava } from 'react-icons/fa'
 import { SiCplusplus, SiPython, SiJavascript, SiGmail, SiReact, SiRedux, SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiSocketdotio, SiJsonwebtokens, SiPrisma, SiZod } from 'react-icons/si'
 import Image from 'next/image'
@@ -23,6 +24,7 @@ const projectImages: { [key: string]: StaticImageData } = {
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const handleScroll = () => {
     const sections = ['home', 'experience', 'projects', 'skills', 'contact']
@@ -49,13 +51,50 @@ export default function Portfolio() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+    setMobileMenuOpen(false)
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary text-foreground">
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 shadow-md">
-        <nav className="container mx-auto px-6 py-4">
-          <ul className="flex justify-center space-x-8">
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <Button
+              variant="ghost"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open mobile menu"
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
+            <ul className="hidden md:flex justify-center space-x-4 lg:space-x-8">
+              {['Home', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+                <li key={item}>
+                  <Button
+                    variant="ghost"
+                    className={`text-sm lg:text-lg ${activeSection === item.toLowerCase() ? 'text-primary' : 'text-muted-foreground'}`}
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                  >
+                    {item}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center">
+          <Button
+            variant="ghost"
+            className="absolute top-4 right-4"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close mobile menu"
+          >
+            <X className="h-6 w-6" />
+          </Button>
+          <ul className="flex flex-col space-y-4">
             {['Home', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
               <li key={item}>
                 <Button
@@ -68,8 +107,8 @@ export default function Portfolio() {
               </li>
             ))}
           </ul>
-        </nav>
-      </header>
+        </div>
+      )}
 
       <main className="pt-20">
         <HomeSection scrollToSection={scrollToSection} />
@@ -83,7 +122,6 @@ export default function Portfolio() {
     </div>
   )
 }
-
 function HomeSection({ scrollToSection }: { scrollToSection: (sectionId: string) => void }) {
   const [ref, inView] = useInView({
     triggerOnce: true,
