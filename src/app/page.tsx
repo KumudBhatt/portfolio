@@ -212,14 +212,14 @@ function ExperienceSection() {
           <Card className="bg-card border-border mb-8">
             <CardHeader>
               <CardTitle className="text-card-foreground">Full Stack Developer Intern</CardTitle>
-              <CardDescription className="text-muted-foreground">National Informatics Centre (NIC) | August 2024 – Present</CardDescription>
+              <CardDescription className="text-muted-foreground">National Informatics Centre (NIC) | August 2024 – October 2024</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                <li>Spearheading the development of a comprehensive website for a Self Help Group (SHG), covering both frontend and backend aspects.</li>
-                <li>Architecting and managing the database using PostgreSQL, developing backend services with Express.js and Node.js, and creating the frontend interface with React.js.</li>
-                <li>Designing and implementing scalable and maintainable system architectures to ensure the robustness and performance of the application.</li>
-                <li>Collaborating closely with stakeholders to capture requirements, ensuring the delivery of a user-centric and efficient web application.</li>
+                <li>Led the development of a website for a Self Help Group (SHG), integrating both frontend and backend functionalities.</li>
+                <li>Designed and managed a PostgreSQL database to efficiently handle large volumes of records.</li>
+                <li>Developed backend services using Express.js and Node.js, and built a responsive frontend with React.js.</li>
+                <li>Collaborated with stakeholders to gather requirements, ensuring a user-centric and efficient web application.</li>
               </ul>
             </CardContent>
           </Card>
