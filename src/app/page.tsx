@@ -67,7 +67,7 @@ export default function Portfolio() {
             >
               <Menu className="h-6 w-6" />
             </Button>
-            <ul className="hidden md:flex justify-center space-x-4 lg:space-x-8">
+            <ul className="hidden md:flex justify-center space-x-4 lg:space-x-8 mx-auto">
               {['Home', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
                 <li key={item}>
                   <Button
@@ -122,6 +122,7 @@ export default function Portfolio() {
     </div>
   )
 }
+
 function HomeSection({ scrollToSection }: { scrollToSection: (sectionId: string) => void }) {
   const [ref, inView] = useInView({
     triggerOnce: true,
