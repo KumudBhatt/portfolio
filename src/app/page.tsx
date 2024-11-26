@@ -216,11 +216,13 @@ function ExperienceSection() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                <li>Led the development of a website for a Self Help Group (SHG), integrating both frontend and backend functionalities.</li>
-                <li>Designed and managed a PostgreSQL database to efficiently handle large volumes of records.</li>
-                <li>Developed backend services using Express.js and Node.js, and built a responsive frontend with React.js.</li>
-                <li>Collaborated with stakeholders to gather requirements, ensuring a user-centric and efficient web application.</li>
+                <li>Built a responsive homepage and login page using React.js and Tailwind CSS.</li>
+                <li>Designed a PostgreSQL database schema to efficiently manage complex relationships.</li>
+                <li>Developed backend services using Node.js and Express.js to support platform functionality.</li>
+                <li>Implemented role-based access control to ensure secure and tailored user permissions.</li>
+                <li>Contributed to the government’s SHG initiative, fostering rural development and empowering women.</li>
               </ul>
+
             </CardContent>
           </Card>
         </motion.div>
@@ -309,10 +311,8 @@ function ProjectCard({ project, index }: { project: { title: string; description
 
 function SkillsSection() {
   const skills = [
-    { name: "C++", icon: SiCplusplus },
-    { name: "Python", icon: SiPython },
-    { name: "Java", icon: FaJava },
     { name: "JavaScript", icon: SiJavascript },
+    { name: "C++", icon: SiCplusplus },
     { name: "React", icon: SiReact },
     { name: "Redux", icon: SiRedux },
     { name: "Node.js", icon: SiNodedotjs },
@@ -323,6 +323,8 @@ function SkillsSection() {
     { name: "JWT", icon: SiJsonwebtokens },
     { name: "Prisma", icon: SiPrisma },
     { name: "Zod", icon: SiZod },
+    { name: "Python", icon: SiPython },
+    { name: "Java", icon: FaJava },
   ]
 
   return (
